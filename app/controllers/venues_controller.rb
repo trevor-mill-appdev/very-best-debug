@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
 
   def show
     venue_id = params.fetch("venue_id")
-    matching_venues = Venue.where({ :id => venue_id })
+    matching_venues = Venue.where({ :name => venue_id })
     @the_venue = matching_venues.first
 
     @matching_comments = Comment.where({ :venue_id => venue_id})
